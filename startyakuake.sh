@@ -9,25 +9,26 @@ sleep 1
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
 sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cd /home/robocomp/robocomp/files/innermodel'
+#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'rcis simpleworld.xml'
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'rcis betaWorldArm.xml'
 qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'rcis'
-sleep 1
+sleep 2
 
 # JOYSTICK
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cd /home/robocomp/robocomp/components/robocomp-robolab/components/joystickComp'
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'bin/joystickComp --Ice.Config=etc/config'
-qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'joystick'
-sleep 1
-
-#KEYBOARD
 #qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
 #sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
-#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cd /home/robocomp/robocomp/components/robocomp-robolab/components/keyboardrobotcontroller'
-#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'src/keyboardrobotcontroller.py etc/config'
-#qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'keyboard'
+#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cd /home/robocomp/robocomp/components/robocomp-robolab/components/joystickComp'
+#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'bin/joystickComp --Ice.Config=etc/config'
+#qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'joystick'
 #sleep 1
+
+#KEYBOARD
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
+sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cd /home/robocomp/robocomp/components/robocomp-robolab/components/keyboardrobotcontroller'
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'src/keyboardrobotcontroller.py etc/config'
+qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'keyboard'
+sleep 1
 
 
 #BRAZO
