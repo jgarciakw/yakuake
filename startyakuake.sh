@@ -21,6 +21,15 @@ qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'bin/joystick
 qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'joystick'
 sleep 1
 
+#KEYBOARD
+#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
+#sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
+#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cd /home/robocomp/robocomp/components/robocomp-robolab/components/keyboardrobotcontroller'
+#qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'src/keyboardrobotcontroller.py etc/config'
+#qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'keyboard'
+#sleep 1
+
+
 #BRAZO
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
 sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
