@@ -47,6 +47,14 @@ qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'bin/AprilTag
 qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'aprilTags'
 sleep 1
 
+# AprilTagsHand
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
+sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cd /home/robocomp/robocomp/components/robocomp-robolab/components/apriltagsMASTER'
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'bin/AprilTagsComp etc/config2'
+qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'aprilTagsHand'
+sleep 1
+
 
 # COMPONENTE
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
